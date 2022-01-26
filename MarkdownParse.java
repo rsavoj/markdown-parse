@@ -38,6 +38,6 @@ public class MarkdownParse {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = getLinks(contents);
         System.out.println(links);
-        System.out.println("We are timing how long it takes to run all our files");
+        System.out.println("We are timing how long it takes to run all our files it took 1 milute and 15 seconds");
     }
 }
