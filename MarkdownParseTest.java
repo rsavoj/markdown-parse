@@ -23,7 +23,7 @@ public class MarkdownParseTest {
         
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
-        ArrayList<String> links = parseFile.getLinks(contents);
+        ArrayList<String> links =MarkdownParse.getLinks(contents);
         assertEquals("The test-file.md file gives the correct output",links 
         ,List.of("https://something.com", "some-page.html")  );
     }
@@ -33,7 +33,7 @@ public class MarkdownParseTest {
         
         Path fileName = Path.of("testfile2.md");
 	    String contents = Files.readString(fileName);
-        ArrayList<String> links = parseFile.getLinks(contents);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals("The test-file.md file gives the correct output",links ,
         List.of("https://www.google.com/search?q=cat&rlz=1C5CHFA_enUS973US973&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjbxeiawsv1AhUtIUQIHYWmCLUQ_AUoAXoECAIQAw&biw=1018&bih=647&dpr=2#imgrc=0V922RrJgQc9SM", 
         "https://www.google.com/search?q=cat&rlz=1C5CHFA_enUS973US973&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjbxeiawsv1AhUtIUQIHYWmCLUQ_AUoAXoECAIQAw&biw=1018&bih=647&dpr=2#imgrc=0V922RrJgQc9SM")  );
@@ -44,8 +44,17 @@ public class MarkdownParseTest {
         
         Path fileName = Path.of("testfile3.md");
 	    String contents = Files.readString(fileName);
-        ArrayList<String> links = parseFile.getLinks(contents);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals("The test-file.md file gives the correct output", List.of(), links  );
+    }
+    @Test 
+    public void testFileFour() throws IOException{
+        
+        Path fileName = Path.of("testfile4.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        System.out.println(links);
+        assertEquals("The test-file.md file gives the correct output", List.of(""), links  );
     }
 
   
