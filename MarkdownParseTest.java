@@ -45,18 +45,9 @@ public class MarkdownParseTest {
         Path fileName = Path.of("testfile3.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = parseFile.getLinks(contents);
-        assertEquals("The test-file.md file gives the correct output",links ,
-        List.of());
+        assertEquals("The test-file.md file gives the correct output", List.of(), links  );
     }
 
-    @Test 
-    public void testFileFour() throws IOException{
-        
-        Path fileName = Path.of("testfile4.md");
-	    String contents = Files.readString(fileName);
-        ArrayList<String> links = parseFile.getLinks(contents);
-        assertEquals("The test-file.md file gives the correct output",links ,
-        List.of() );
-    }
+  
 }
 
